@@ -4,7 +4,10 @@ from llama_cpp import Llama
 model_path = os.getenv("MODEL_PATH")
 
 # Create a Llama instance with a specified model
-llm = Llama(model_path= model_path)
+llm = Llama(
+    model_path= model_path,
+    model_kwargs={"n_gpu_layers": 1}
+    )
 
 # Define the prompt and the generation parameters
 prompt = "Quelle est la puissance de llama2 ?"
